@@ -1,0 +1,50 @@
+
+/* 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+  } */
+
+  table {
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 60%;
+
+  }
+
+td{
+
+  text-align: justify;
+  width: 23%;
+  padding-left: 80px;
+}
+
+#delEdit{
+  display: flex;
+}
+
+  th,td{
+    height: 40px;
+  }
+  #head{
+
+    height: auto;
+    width: 800px;
+    text-align: center;
+      margin-left: 540px;
+      background-color: rgb(58, 122, 4);
+      border-radius: 25px ;
+
+  }
+  .container{
+    margin: auto;
+  }
+
+  #formId{
+    margin: auto;
+  }
+  .row{
+    margin-right: 20px;
+  }

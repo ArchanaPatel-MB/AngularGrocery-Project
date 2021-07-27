@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 id="head">list of items</h1>
+    <form id="formId">
+        <input #itemname type="text" size="10" placeholder="Enter item name">
+        <input #itemUnit type="number" size="10" placeholder="Enter item unit">
+        <input #itemPrice type="number" size="10" placeholder="Enter per unit price of item">
+        <button type="button" (click)="insertItem(itemname.value,itemUnit.value,itemPrice.value)">Add Item</button>
+    </form>
+
+
+
+    <table>
+        <thead>
+            <th> item name</th>
+            <th>item unit</th>
+            <th> Per unit price</th>
+            <th>total price</th>
+            <th>delete/edit</th>
+        </thead>
+    </table>
+    <table *ngFor="let addItem of addition">
+        <tr class="row">
+            <td>{{addItem.itemName}}</td>
+            <td>{{addItem.unit}}</td>
+            <td>{{addItem.pricePerUnit}}</td>
+            <td>{{addItem.total}}</td>
+            <td id="delEdit">
+                <button type="button" class="btn btn-danger" (click)="deleteItem(addItem)">delete</button>
+                <button type="button"> edit</button>
+            </td>
+        </tr>
+    </table>
+
+    <p>Grand total:{{grandTotal}}</p>
