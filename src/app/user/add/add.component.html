@@ -26,7 +26,7 @@
             <td>{{addItem.total}}</td>
             <td id="delEdit">
                 <button type="button" class="btn btn-danger" (click)="deleteItem(addItem)">delete</button>
-                <button type="button"> edit</button>
+                <button type="button" (click)="editItem($event)" > edit</button>
             </td>
         </tr>
     </table>
