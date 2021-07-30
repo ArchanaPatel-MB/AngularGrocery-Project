@@ -1,12 +1,21 @@
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AddComponent } from './user/add/add.component';
+import { EditComponent } from './user/edit/edit.component';
 
 const routes: Routes = [
   {
   path:"",
-  component:AddComponent
+  component: AddComponent,
+  },
+  // {
+  //   path:"add",
+  //   component: AddComponent,
+  //   },
+  {
+    path:"edit",
+    component: EditComponent,
   }
 ];
 
@@ -15,3 +24,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export const routingComponents=[AddComponent,EditComponent]

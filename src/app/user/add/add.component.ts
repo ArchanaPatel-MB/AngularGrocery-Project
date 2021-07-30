@@ -28,10 +28,10 @@ export class AddComponent implements OnInit {
     let total: number = pricePerUnit * unit
     this.grandTotal += total
     this.addition.push({ itemName, unit, pricePerUnit, total })
-    console.log(this.addition)
+    // console.log(this.addition)
   }
   deleteItem(array: Addition) {
-    console.log(array)
+    // console.log(array)
     let temp = 0;
     const index = this.addition.indexOf(array)
     console.log(index + "index")
@@ -39,22 +39,18 @@ export class AddComponent implements OnInit {
     this.grandTotal -= temp
     this.addition.splice(index, 1)
   }
- oldvalue=0;
-  editItem(value: any){
-    let sm=value.target.parentElement
-    console.log(sm)
-     value.target.parentNode.parentNode.childNodes[0].contentEditable = true;
-     value.target.parentNode.parentNode.childNodes[1].contentEditable = true;
-     value.target.parentNode.parentNode.childNodes[2].contentEditable = true;
-     //console.log(sm.childNodes[3].textContent)
-    //  this.oldvalue=parseInt(value.childNodes[3].textContent)
-     //console.log(this.oldvalue)
-
-     value.textContent='save'
-    //  console.log(value.target.textContent)
-  }
+//  oldvalue=0;
+//   editItem(value: any){
+//      console.log(value.target.textContent)
+//     if(value.target.textContent=='edit'){
+//       console.log("sdgfb")
+//      value.target.parentNode.parentNode.childNodes[0].contentEditable = true;
+//      value.target.parentNode.parentNode.childNodes[1].contentEditable = true;
+//      value.target.parentNode.parentNode.childNodes[2].contentEditable = true;
+//     }
+//   }
 }
-function typeOf(typeOf: any, value: any) {
-  throw new Error('Function not implemented.');
-}
+// function typeOf(typeOf: any, value: any) {
+//   throw new Error('Function not implemented.');
+  //}
 

@@ -5,30 +5,36 @@
         <input #itemUnit type="number" size="10" placeholder="Enter item unit">
         <input #itemPrice type="number" size="10" placeholder="Enter per unit price of item">
         <button type="button" (click)="insertItem(itemname.value,itemUnit.value,itemPrice.value)">Add Item</button>
+       
     </form>
+</div>
 
-
-
-    <table>
+    <table class="table">
         <thead>
-            <th> item name</th>
-            <th>item unit</th>
-            <th> Per unit price</th>
-            <th>total price</th>
-            <th>delete/edit</th>
+            <th scope="col"> item name</th>
+            <th scope="col">item unit</th>
+            <th scope="col"> Per unit price</th>
+            <th scope="col">total price</th>
+            <th scope="col">delete/edit</th>
         </thead>
-    </table>
-    <table *ngFor="let addItem of addition">
-        <tr class="row">
+    <tbody *ngFor="let addItem of addition">
+        <tr scope="row">
             <td>{{addItem.itemName}}</td>
             <td>{{addItem.unit}}</td>
             <td>{{addItem.pricePerUnit}}</td>
             <td>{{addItem.total}}</td>
             <td id="delEdit">
                 <button type="button" class="btn btn-danger" (click)="deleteItem(addItem)">delete</button>
-                <button type="button" (click)="editItem($event)" > edit</button>
+                <nav>
+                   <a routerLink="/edit">
+                       <button type="button" class="btn btn-primary" > edit</button>
+                   </a>
+                </nav>
             </td>
         </tr>
+    </tbody>
     </table>
 
     <p>Grand total:{{grandTotal}}</p>
+
+
