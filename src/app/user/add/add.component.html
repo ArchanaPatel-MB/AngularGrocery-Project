@@ -1,16 +1,11 @@
 <div class="container">
     <h1 id="head">list of items</h1>
-    <form id="formId">
-        <input #itemname type="text" size="10" placeholder="Enter item name">
-        <input #itemUnit type="number" size="10" placeholder="Enter item unit">
-        <input #itemPrice type="number" size="10" placeholder="Enter per unit price of item">
-        <button type="button" (click)="insertItem(itemname.value,itemUnit.value,itemPrice.value)">Add Item</button>
-       
-    </form>
+    <app-form></app-form>
 </div>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
+            <th scope="col"> id</th>
             <th scope="col"> item name</th>
             <th scope="col">item unit</th>
             <th scope="col"> Per unit price</th>
@@ -19,22 +14,26 @@
         </thead>
     <tbody *ngFor="let addItem of addition">
         <tr scope="row">
+            <td>{{addItem.id}}</td>
             <td>{{addItem.itemName}}</td>
             <td>{{addItem.unit}}</td>
             <td>{{addItem.pricePerUnit}}</td>
             <td>{{addItem.total}}</td>
-            <td id="delEdit">
-                <button type="button" class="btn btn-danger" (click)="deleteItem(addItem)">delete</button>
-                <nav>
-                   <a routerLink="/edit">
-                       <button type="button" class="btn btn-primary" > edit</button>
-                   </a>
-                </nav>
+            <td >
+                <div id="delEdit">
+                    <button type="button" class="btn btn-danger" (click)="deleteItem(addItem)">delete</button>
+                    <nav>
+                       <a routerLink='["addItem/edit,addItem.id"]'>
+                           <button type="button" style="margin-left: 4px;" class="btn btn-primary" > edit</button>
+                       </a>
+                    </nav>
+
+                </div>
             </td>
         </tr>
     </tbody>
     </table>
 
-    <p>Grand total:{{grandTotal}}</p>
+    <p style="margin-left:500px; margin-top: 20px;"><b>Grand total:</b>{{grandTotal}}</p>
 
 

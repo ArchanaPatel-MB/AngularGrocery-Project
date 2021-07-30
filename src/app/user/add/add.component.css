@@ -11,13 +11,33 @@
       background-color: rgb(58, 122, 4);
       border-radius: 25px ;
   }
-  #formId{
-    margin: auto;
-    margin-bottom: 20PX;
-  }
-  .table, th, td {
+ 
+  
+  table {
+    width: 930px;
+    margin-left: 10px;
+    border-spacing: 0px;
+    table-layout: auto;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    color: green;
+    text-align: center;
     border: 1px solid black;
-  }
+}
+
+td {
+    border: 1px solid black;
+    word-wrap: break-word;
+    text-align: center;
+}
   #delEdit{
     display: flex;
+    border: wheat;
+    margin-left: 25%;
+    
+
   }

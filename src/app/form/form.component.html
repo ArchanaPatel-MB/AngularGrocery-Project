@@ -1,1 +1,8 @@
-<p>form works!</p>
+<form id="formId">
+       
+    <input #idd type="text" size="10" placeholder="Enter id">
+    <input #itemname type="text" size="10" placeholder="Enter item name">
+    <input #itemUnit type="number" size="10" placeholder="Enter item unit">
+    <input #itemPrice type="number" size="10" placeholder="Enter per unit price of item">
+    <button type="button" (click)="insertItem(idd.value,itemname.value,itemUnit.value,itemPrice.value)">Add Item</button>
+</form>
