@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  newValue:number=0
 
   constructor(private editService:EditService) { }
 
+  
+
   ngOnInit(): void {
+
+    console.log(this.newValue)
   }
   // insertItem(idd:string,itemName: string, itemUnit: string, pricePerunit: string) {
 
@@ -26,5 +31,13 @@ export class FormComponent implements OnInit {
   insertItem(idd:string,itemName: string, itemUnit: string, pricePerunit: string){
 
     this.editService.insertItemm(idd,itemName,itemUnit,pricePerunit)
+      this.newValue=this.editService.returnGrandTotal()
+      console.log(this.newValue)
+     let data:number=this.editService.newFunction(this.newValue)
+     console.log(data)
+     this.editService.emit<number>(data)
+
   }
 }
+
+
