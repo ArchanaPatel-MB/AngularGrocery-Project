@@ -38,6 +38,8 @@ td {
     display: flex;
     border: wheat;
     margin-left: 25%;
-    
+  }
 
+  app-row{
+    display :contents;
   }

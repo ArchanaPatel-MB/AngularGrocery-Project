@@ -1,0 +1,10 @@
+td {
+    border: 1px solid black;
+    word-wrap: break-word;
+    text-align: center;
+}
+#delEdit{
+    display: flex;
+    border: wheat;
+    margin-left: 25%;
+  }

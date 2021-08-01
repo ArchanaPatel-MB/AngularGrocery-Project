@@ -3,23 +3,23 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
         <label for="id" style="margin-left: 10px;">id</label>
-        <input type="text" class="form-control" [ngModel]="addition[0].itemName" name="id" placeholder="id"
+        <input type="text" class="form-control" [(ngModel)]="addition[0].id" name="id" placeholder="id"
             style="display: flex; width: 60vw;margin:  10px;padding: 10px;">
     </div>
      
     <div class="form-group">
         <label for="id" style="margin-left: 10px;">ItemName</label>
-        <input type="text" class="form-control" [ngModel]="addition[0].itemName" name="itemName" placeholder="id"
+        <input type="text" class="form-control" [(ngModel)]="addition[0].itemName" name="itemName" placeholder="itemName"
             style="display: flex; width: 60vw;margin:  10px;padding: 10px;">
     </div>
     <div class="form-group">
         <label for="name" style="margin-left: 10px;">Unit</label>
-        <input type="text" class="form-control" [ngModel]="addition[0].unit" name="unit" placeholder="name"
+        <input type="text" class="form-control" [(ngModel)]="addition[0].unit" name="unit" placeholder="unit"
             style="display: flex; width: 60vw;margin: 10px;padding: 10px;">
     </div>
     <div class="form-group">
         <label for="unit" style="margin-left: 10px;">price per unit</label>
-        <input type="text" class="form-control" [ngModel]="addition[0].pricePerUnit" name="pricePerUnit" placeholder="unit"
+        <input type="text" class="form-control" [(ngModel)]="addition[0].pricePerUnit" name="pricePerUnit" placeholder="pricePerUnit"
             style="display: flex; width: 60vw;margin: 10px;padding: 10px;">
     </div>
    

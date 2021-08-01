@@ -1,0 +1,18 @@
+<tr scope="row">
+    <td>{{addItem.id}}</td>
+    <td>{{addItem.itemName}}</td>
+    <td>{{addItem.unit}}</td>
+    <td>{{addItem.pricePerUnit}}</td>
+    <td>{{addItem.total}}</td>
+    <td >
+        <div id="delEdit">
+            <button type="button" class="btn btn-danger" (click)="deleteItemm(addItem,$event)">delete</button>
+            <nav>
+               <a routerLink='edit'>
+                   <button type="button" style="margin-left: 4px;" class="btn btn-primary" (click)="editItem(addItem,$event)"> edit</button>
+               </a>
+            </nav>
+
+        </div>
+    </td>
+</tr>
