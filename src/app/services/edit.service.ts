@@ -1,4 +1,4 @@
-import { Addition } from 'src/app/models/addition.model';
+import { Addition } from './../models/addition.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -6,17 +6,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EditService {
+ 
   grandTotal: number = 0
   addition: Addition[] = []
-
+  editText:Addition[]=[]
 
   public _subject = new BehaviorSubject<any>('');
   constructor() { }
 
-  emit<T>(data: number) {
+  emit<T>(data: any) {
     this._subject.next(data);
   }
-
   on<T>(): Observable<T> {
     return this._subject.asObservable()
   }
@@ -39,6 +39,18 @@ export class EditService {
   returnData() {
 
     return this.addition
+  }
+
+//  getMethod(addItem: Addition,index:number) {
+//      console.log(addItem)
+
+//     // this.editText=addItem
+    
+//   }
+  onAdd(addition:Addition,index:number){
+    
+    console.log(addition)
+    this.addition.splice(index, 1, addition);
   }
 
 }

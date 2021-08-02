@@ -32,10 +32,7 @@ export class AddComponent implements OnInit {
     this.editService.changeGrandTotal(this.data)
 
   }
-  onget(num: number) {
-
-  }
-
+  
 }
 
 

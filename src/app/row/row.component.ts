@@ -1,4 +1,6 @@
+import { Addition } from './../models/addition.model';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { EditService } from './../services/edit.service';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 })
 export class RowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private editService:EditService) { }
 @Input() addItem:any
 @Output() passValue=new EventEmitter
   ngOnInit(): void {
@@ -19,7 +21,12 @@ this.passValue.emit(addItem);
 
   }
 
-  editItem(addItem:object,event:any){
+  editItem(addItem:Addition,event:any){
+    console.log(addItem)
+    let num=addItem.id
+    console.log(num)
+    // this.editService.getMethod(addItem,num)
+    this.editService.emit<number>(addItem)
     
   }
 }

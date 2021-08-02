@@ -1,7 +1,7 @@
+import { Addition } from './../../models/addition.model';
 import { EditService } from './../../services/edit.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Addition } from 'src/app/models/addition.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,20 +13,25 @@ export class EditComponent implements OnInit {
     id !:number
     header: string=''
   addition: Addition[] =[
-    {id:1,
-    itemName:'apple',
-    unit:3,
-    pricePerUnit:5,
-    total:15}
+    {id:0,
+    itemName:'',
+    unit:0,
+    pricePerUnit:0,
+    total:0}
   ] 
 
   constructor(private router: Router, private route: ActivatedRoute, private editService:EditService) {
-
+    // this.editService.on<any>().subscribe(
+    //   (data) => {
+    //     this.addition = data
+    //   }
+    // )
    }
   ngOnInit(): void {
   // this.id=parseInt(this.route.snapshot.paramMap.get('id'))
-    //    this.header=this.id===0? '':'Edit'
-    //   this.addition=this.editService.onGet()
+  //      this.header=this.id===0? '':'Edit'
+  //      this.addition=this.editService.onGet()--
+    console.log(this.addition)
   }
   
   onSubmit(form: NgForm) {
@@ -39,8 +44,9 @@ export class EditComponent implements OnInit {
       total:temp
     }
     console.log(addition)
-    // this.editService.onAdd(addition)
-    this.router.navigateByUrl(" ");
+    this.editService.onAdd(addition,addition.id)
+    console.log(this.editService.addition)
+    this.router.navigateByUrl("");
 }
   
 }

@@ -13,7 +13,7 @@
             <th scope="col">delete/edit</th>
         </thead>
     <tbody >
-        <app-row *ngFor="let index of addition" [addItem]='index' (passValue)='deleteItem($event)'></app-row>
+        <app-row *ngFor="let addItem of addition" [addItem]='addItem' (passValue)='deleteItem($event)'></app-row>
         <!-- <tr scope="row">
             <td>{{addItem.id}}</td>
             <td>{{addItem.itemName}}</td>

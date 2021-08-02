@@ -11,7 +11,6 @@ export class FormComponent implements OnInit {
 
   constructor(private editService:EditService) { }
   ngOnInit(): void {
-    console.log(this.newValue)
   }
   
   insertItem(idd:string,itemName: string, itemUnit: string, pricePerunit: string){
