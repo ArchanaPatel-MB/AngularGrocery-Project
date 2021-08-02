@@ -50,7 +50,13 @@ export class EditService {
   onAdd(addition:Addition,index:number){
     
     console.log(addition)
+    let temp=this.addition[index].total
     this.addition.splice(index, 1, addition);
+    console.log(addition.total+"addition.total")
+    console.log(this.grandTotal+"this.grandTotal")
+   let value= this.grandTotal+Number(addition.total)-temp
+   console.log(value)
+    this.emit<number>(value)
   }
 
 }
